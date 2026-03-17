@@ -1,3 +1,3 @@
-** HOW TO SET UP **
+**HOW TO SET UP**
 
-** STEP ONE: ** 
+**STEP ONE:** 
