@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Loader</title>
+  <style>
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #4a148c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #6a1b9a;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="loadGame()">Click to Play</button>
+
+  <script>
+    const FILE_URL = 'https://cdn.jsdelivr.net/gh/organ-nizator/ohh@main/sur.xml';
+
+    async function loadGame() {
+      try {
+        const res = await fetch(FILE_URL);
+        const text = await res.text();
+        const win = window.open('', '_blank');
+        if (win) {
+          win.document.open();
+          win.document.write(text);
+          win.document.close();
+        } else {
+          alert('Popup blocked. Please allow popups.');
+        }
+      } catch (e) {
+        alert('Failed to load game.');
+        console.error(e);
+      }
+    }
+  </script>
+</body>
+</html>
+
